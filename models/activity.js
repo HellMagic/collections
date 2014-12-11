@@ -17,10 +17,11 @@ c.这里video用videos数组会不会更好些，防止以后会把多个视频�
 ===========================================================================================*/
 
 var ActivitySchema = new Schema({
-    type: String,
-    description: String,
+    name: String,
+    icon: String, // 缩略图
+    task: { type: ObjectId, ref: 'Task' },
     problems: [{ type: ObjectId, ref: 'Problem' }],
-    video: [{ type: ObjectId, ref: 'Video' }],
+    videos: [{ type: ObjectId, ref: 'Video' }],
     bloods: {
     	type: Number,
     	default: 3

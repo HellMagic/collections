@@ -11,8 +11,9 @@ var ObjectId = Schema.Types.ObjectId;
 a.requirements依赖的知识点的id array
 ==========================*/
 var TopicSchema = new Schema({
-    title: String,
-    description: String,
+    name: String,
+    desc: String,
+    seq: Number,
     chapter: { type: ObjectId, ref: 'Chapter' },
     requirements: [String],
     tasks: [{ type: ObjectId, ref: 'Task' }]

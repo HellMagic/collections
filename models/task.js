@@ -12,8 +12,9 @@ var deepPopulate = require('mongoose-deep-populate');
 var TaskSchema = new Schema({
     name: String,
     type: String,
+    seq: Number,
     topic: { type: ObjectId, ref: 'Topic' },
-    chapterId: { type: ObjectId, ref: 'Chapter' },
+    chapter: { type: ObjectId, ref: 'Chapter' },
     activities: [{type: ObjectId, ref: 'Activity'}]
 });
 TaskSchema.plugin(deepPopulate);

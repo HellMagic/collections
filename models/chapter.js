@@ -14,10 +14,12 @@ a.icon当前String依然代表是存储在七牛上的一个url地址, 可以考
 b.type暂时先分为online, offline, test
 ==========================*/
 var ChapterSchema = new Schema({
-    title: String,
+    name: String,
     type: String,
-    description: String,
+    desc: String,
     icon: String,
+    seq: Number,
+    intro: { type: ObjectId, ref: 'Video' },
     Topics: [{ type: ObjectId, ref: 'Topic' }]
 });
 
